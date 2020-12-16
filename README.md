@@ -68,30 +68,43 @@ I follow a certain pattern of question when doing the Data Exploration. My initi
 
 My train dataset was from the beginnning completely balanced. 
 
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2013.42.43.png
+"  width="100%" height="" align="center"/>
+
 1. Do Fake News have authors?
 
 I found out that more than almost 2000 rows had no Author at all, belonging more than 1750 rows to Fake News and less than 100 to Real News. Therefore, Anonymous authors was an important feature to take into account. 
 
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2014.22.15.png" width="70%" height="" align="center"/>
+
 2. What about the source?
 
 By looking into the columns I had, I was able to scrape more than 500 different sources, but not enough to make a significant difference between fake and real news. 
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2014.22.08.png" width="70%" height="" align="center"/>
 
 2. What topics are they talking about?
 
-I built and LDA model using the pyLDAvis library to find cluster in my articles that could help me identify the news and their subject. With a 50% level of coherence, my model was able to find 35 different clusters, being the most important ones the following:
+I built and LDA model using the <a href="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/data/lda.html">pyLDAvis</a> library to find cluster in my articles that could help me identify the news and their subject. With a 50% level of coherence, my model was able to find 35 different clusters, being the most important ones the following:
 - Political global news.
 - Regular news involving people and cities
 - US election
 - Wikileaks and Hillary scandal
 - Syria and Afghanistan
 
+
+
 However, these topics were equally distributed between fake and real news, and there were no significant differences to take into account that there were some topics including predominantly fake or real news. 
 
 I went ahead and decided to perfom a word cloud of the most used words in our articles, and the most used words in real vs fake news. ALthough somewhat similar, I did found some clear diferent patterns.
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2013.43.11.png" width="70%" height="" align="center"/>
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2013.43.32.png" width="70%" height="" align="center"/>
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2013.43.40.png" width="70%" height="" align="center"/>
 
 3. Do fake news have a sentiment attached in their title? Do fake news tend to yellow press journalism?
 
 To discover if fake news were indeed attached to some type of sentiment, I used the VADER sentiment analysis. VADER is a model used for text sentiment analysis that is sensitive to both polarity (positive/negative) and intensity (strength) of emotion. However, the results were contrary to my initial thoughts and actually, not a lot of my news had a sentiment attached to it, and real news had slightly a little bit more of sentiment than fake news, actually. 
+
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2014.23.29.png" width="70%" height="" align="center"/>
 
 Other considerations I took into account were the lenght of the news depending on its accuracy, duplicates, and date. 
 
@@ -101,6 +114,7 @@ But, how does my algorithm take all these features and text into account? How is
 
 First of all, although we had already preprocessed our data to perform the Topic Modeling analysis with pyLDAvis using the nltk library, let me explaing a little but the workflow of NLP. 
 
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/difference-between-classical-nlp-deep-learning-nlp.png" width="100%" height="" align="center"/>
 
 We start with a text file, that independently from the steps and libraries and mechanisms we choose to use, performs a language detection and after that, gets each sentence and word and tokenizes it, lowercase and clean according to the rules we choose and if we think is important, stemmatizes it, which basically, turns the word into its root forms. 
 
@@ -121,12 +135,17 @@ I sticked with FastText to try one of the two models and preprocessed my text co
 
 To give some more clarity, this is what my dataset looked in the beginning, and how it looked before I started training models. 
 
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2014.22.39.png" width="100%" height="" align="center"/>
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2013.37.39.png" width="100%" height="" align="center"/>
+
 
 ## Modeling <a name="id4"></a>
 
 Once I had my data converted to numbers, I chose four different models to train my dataset. Logistic Regression, Supper Vector Machine, Naive Bayes and Random Forest. 
 
 I feed all of them my dataset in different versions: just the text columns converted to numbers with the target and my dataset with the author and topic modeling features. It turns out, my best results were using Logistic Regression and SVC with just the text features, no other features such as author or topic added. 
+
+<img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2013.36.13.png" width="100%" height="" align="center"/>
 
 In the end I accomplished to create and application that: 
 - Has a 97% of accuracy when predicting fake or real news. 
