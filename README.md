@@ -97,4 +97,61 @@ Other considerations I took into account were the lenght of the news depending o
 
 ## NLP : Preprocessing Data <a name="id4"></a>
 
+But, how does my algorithm take all these features and text into account? How is going to interpretate my data? 
 
+First of all, although we had already preprocessed our data to perform the Topic Modeling analysis with pyLDAvis using the nltk library, let me explaing a little but the workflow of NLP. 
+
+
+We start with a text file, that independently from the steps and libraries and mechanisms we choose to use, performs a language detection and after that, gets each sentence and word and tokenizes it, lowercase and clean according to the rules we choose and if we think is important, stemmatizes it, which basically, turns the word into its root forms. 
+
+After that, the words get converted into numbers, being these numbers the weight of each word in its sentence, if you use the TFIDF matrix, or gets converted into a multidimensional vector where Deep Learning mechanisms such as Word2Vec or FastText, assign each word a position, and therefore and importance and relationship between the words depending on how they form sentences. 
+
+I chose to approach my data on two different ways: 
+- With the Classical NLP approach; where I performed most of the steps individually, first detecting the language of my artciles using CLDR3, a neural network model for language identification, and used NLTK and SPACY as two different libraries to preprocess my text, tokenize, clean and stemmatize my words, among other rules you can observe in my cleaning function at the Preprocessing Data notebook. 
+
+After that, I converted each sentence and word into a number by using the TFIDF matrix, where each word gets assigned a certain weigth. After that, I had two different approached on how to process my text columns and pass them along to my chosen models. 
+
+- Using Deep Learning Algorithms; since Deep Learning was completely new for me, I chose to give it a try. I started with Word2Vec, a neural network model used to learn word association from large junks of text. This models turns each word into a vector, chosen carefully by the cosine similarity mathematical function, which basically indicates the semantic similarity between each word. Word2Vec was created by google. 
+
+<img src= =https://miro.medium.com/max/3496/1*jpnKO5X0Ii8PVdQYFO2z1Q.png alt="fasttextword2vec" width="100%" height="" align="center"/>
+
+After starting with Word2Vec, I discovered FastText, which is basically an extension of Word2Vec created by Facebook and doesn't use gensim. The main difference is that it treats each word as composed of character n-grams. So the vector for a word is made of the sum of this character n-grams. 
+
+I sticked with FastText to try one of the two models and preprocessed my text columns with it to prepare it for the modeling part. 
+
+To give some more clarity, this is what my dataset looked in the beginning, and how it looked before I started training models. 
+
+
+## Modeling <a name="id4"></a>
+
+Once I had my data converted to numbers, I chose four different models to train my dataset. Logistic Regression, Supper Vector Machine, Naive Bayes and Random Forest. 
+
+I feed all of them my dataset in different versions: just the text columns converted to numbers with the target and my dataset with the author and topic modeling features. It turns out, my best results were using Logistic Regression and SVC with just the text features, no other features such as author or topic added. 
+
+In the end I accomplished to create and application that: 
+- Has a 97% of accuracy when predicting fake or real news. 
+- Only misses 3% of the fake news
+- Only misses 2% of the real news. 
+
+## Next Steps and Room for improvement <a name="id4"></a>
+
+Although I am beyond proud of understanding and applying everything I have learned about Data and moreover, NLP, in the last three weeks, since Deep Learning and NLP was not a known topic for me, I realized I spent a lot of time trying to understand and apply the preprocessing part and not as much as I would have liked trying different approached and trying to train my data with a Neural Model such as BERT. 
+
+I have tested my application with the given data but I would like to try it our with other news and fine tune my model to actually build a classification algorithm that it's accurate and approachable to every US based new. 
+
+I will keep working and learning more about NLP for sure, I can't wait to make it better!
+
+
+## Bibliography <a name="id4"></a>
+- The Different Types of Mis and Disinformation - First Draft News:
+<a href= https://firstdraftnews.org/latest/fake-news-complicated/>https://firstdraftnews.org/latest/fake-news-complicated/</a>
+- Michigan State University - Research Guides : 
+<a href=https://guides.lib.umich.edu/c.php?g=283063&p=4471741>https://guides.lib.umich.edu/c.php?g=283063&p=4471741</a>
+- Getting Real with Fake News - Ria Ghandi:
+<a href=https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/getting-real-with-fake-news-d4bc033eb38a>https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/getting-real-with-fake-news-d4bc033eb38a</a>
+- Spacy - English models : 
+<a href=https://spacy.io/models/en#en_core_web_md> https://spacy.io/models/en#en_core_web_md</a>
+- Gensim - Topic Modeling:
+<a href= https://www.machinelearningplus.com/nlp/topic-modeling-gensim-python/> https://www.machinelearningplus.com/nlp/topic-modeling-gensim-python/</a>
+- Using Word2Vec to analyze news headlines and predict article success:
+<a href=https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751>https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751</a>
