@@ -13,6 +13,8 @@ This project aims to understand the carachteristics of Fake vs Real News and cre
 
 Since I started learning about machine learning, I was curious about NLP, how it worked, what was the workflow and how it was really working step to step. By selecting Fake News I was choosing a topic I was familiar too and was easy for me, as I have done studies about it in the past from a more journalistic side. 
 
+<a href="https://www.canva.com/design/DAEQTTuVZys/WgirSlEpvQQXVkzLRqmxVA/view?utm_content=DAEQTTuVZys&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"><b>Here you can check out the slides I made for my presentation.</b></a>
+
 <hr style="color: #7acaff;" width="50%" />
 <a name="dataset"></a>
 
