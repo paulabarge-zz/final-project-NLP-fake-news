@@ -94,7 +94,7 @@ I built and LDA model using the <a href="https://github.com/paulabarge/final-pro
 
 However, these topics were equally distributed between fake and real news, and there were no significant differences to take into account that there were some topics including predominantly fake or real news. 
 
-I went ahead and decided to perfom a word cloud of the most used words in our articles, and the most used words in real vs fake news. ALthough somewhat similar, I did found some clear diferent patterns.
+I went ahead and decided to perfom a word cloud of the most used words in our articles, and the most used words in real vs fake news. ALthough somewhat similar, I did found some clear diferent patterns. <br>
 <img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2013.43.11.png" width="30%" height="" align="center"/>
 <img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2013.43.32.png" width="30%" height="" align="center"/>
 <img src="https://github.com/paulabarge/final-project-NLP-fake-news/blob/main/images/Screen%20Shot%202020-12-14%20at%2013.43.40.png" width="30%" height="" align="center"/>
