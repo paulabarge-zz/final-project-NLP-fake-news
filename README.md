@@ -5,7 +5,7 @@ Paula Iglesias Barge
 *Data Part Time Barcelona June 2020*
 
 
-<img src="https://cdn.newsday.com/polopoly_fs/1.17995327.1523551866!/httpImage/image.png_gen/derivatives/display_960/image.png" alt="faketweet" width="1000" height="200" align="center"/>
+<img src="https://cdn.newsday.com/polopoly_fs/1.17995327.1523551866!/httpImage/image.png_gen/derivatives/display_960/image.png" alt="faketweet" width="100%" height="" align="center"/>
 
 ## Project Description <a name="id1"></a>
 
