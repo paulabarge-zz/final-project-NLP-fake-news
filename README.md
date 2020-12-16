@@ -113,7 +113,7 @@ After that, I converted each sentence and word into a number by using the TFIDF 
 
 - Using Deep Learning Algorithms; since Deep Learning was completely new for me, I chose to give it a try. I started with Word2Vec, a neural network model used to learn word association from large junks of text. This models turns each word into a vector, chosen carefully by the cosine similarity mathematical function, which basically indicates the semantic similarity between each word. Word2Vec was created by google. 
 
-<img src= =https://miro.medium.com/max/3496/1*jpnKO5X0Ii8PVdQYFO2z1Q.png alt="fasttextword2vec" width="100%" height="" align="center"/>
+<img src= ="https://miro.medium.com/max/3496/1*jpnKO5X0Ii8PVdQYFO2z1Q.png" alt="fasttextword2vec" width="100%" height="" align="center"/>
 
 After starting with Word2Vec, I discovered FastText, which is basically an extension of Word2Vec created by Facebook and doesn't use gensim. The main difference is that it treats each word as composed of character n-grams. So the vector for a word is made of the sum of this character n-grams. 
 
@@ -144,14 +144,14 @@ I will keep working and learning more about NLP for sure, I can't wait to make i
 
 ## Bibliography <a name="id4"></a>
 - The Different Types of Mis and Disinformation - First Draft News:
-<a href= https://firstdraftnews.org/latest/fake-news-complicated/>https://firstdraftnews.org/latest/fake-news-complicated/</a>
+<a href= "https://firstdraftnews.org/latest/fake-news-complicated/>https://firstdraftnews.org/latest/fake-news-complicated/"</a>
 - Michigan State University - Research Guides : 
-<a href=https://guides.lib.umich.edu/c.php?g=283063&p=4471741>https://guides.lib.umich.edu/c.php?g=283063&p=4471741</a>
+<a href="https://guides.lib.umich.edu/c.php?g=283063&p=4471741>https://guides.lib.umich.edu/c.php?g=283063&p=4471741"</a>
 - Getting Real with Fake News - Ria Ghandi:
-<a href=https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/getting-real-with-fake-news-d4bc033eb38a>https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/getting-real-with-fake-news-d4bc033eb38a</a>
+<a href="https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/getting-real-with-fake-news-d4bc033eb38a">https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/getting-real-with-fake-news-d4bc033eb38a</a>
 - Spacy - English models : 
-<a href=https://spacy.io/models/en#en_core_web_md> https://spacy.io/models/en#en_core_web_md</a>
+<a href="https://spacy.io/models/en#en_core_web_md"> https://spacy.io/models/en#en_core_web_md</a>
 - Gensim - Topic Modeling:
-<a href= https://www.machinelearningplus.com/nlp/topic-modeling-gensim-python/> https://www.machinelearningplus.com/nlp/topic-modeling-gensim-python/</a>
+<a href= "https://www.machinelearningplus.com/nlp/topic-modeling-gensim-python"> https://www.machinelearningplus.com/nlp/topic-modeling-gensim-python/</a>
 - Using Word2Vec to analyze news headlines and predict article success:
-<a href=https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751>https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751</a>
+<a href="https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751">https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751</a>
